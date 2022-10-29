@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'miCab',
       theme: ThemeData(
-        primarySwatch: Colors.Blue,
+        primarySwatch: Colors.blue
+        ,
       ),
       home: const MyHomePage(title: 'For everyone that needs a ride'),
     );
