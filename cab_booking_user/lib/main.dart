@@ -91,8 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
           FirebaseFirestore.instance
               .collection("messages")
               .add({
-            "text": "messageText",
-            "sender":" loggedInUser.email",
+            "text": "j",
+            "sender":"k",
             "time": DateTime.now(),
           });
         },
