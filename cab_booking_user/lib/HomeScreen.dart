@@ -1,6 +1,8 @@
+import 'package:cab_booking_user/cabSelect.dart';
 import 'package:flutter/material.dart';
 import 'package:cab_booking_user/Methods.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:get/get.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -139,15 +141,20 @@ Padding(
               ),
             ),
             const SizedBox(height: 20),
-            Center(
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10), color: Colors.green),
-                child: const Padding(
-                  padding: EdgeInsets.all(10.5),
-                  child: Text(
-                    "Select Cab",
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+            GestureDetector(
+              onTap: (){
+              Get.to(CabBook(dateTime: '0',));
+              },
+              child: Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10), color: Colors.green),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10.5),
+                    child: Text(
+                      "Select Cab",
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
                   ),
                 ),
               ),
