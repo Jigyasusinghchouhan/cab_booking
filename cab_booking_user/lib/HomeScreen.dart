@@ -1,4 +1,7 @@
 import 'package:cab_booking_user/cabSelect.dart';
+import 'package:cab_booking_user/colorset.dart';
+import 'package:cab_booking_user/getLocation.dart';
+import 'package:cab_booking_user/global.dart';
 import 'package:flutter/material.dart';
 import 'package:cab_booking_user/Methods.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
@@ -32,11 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 30),
+
             Text(
               "From:",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             // const SizedBox(height: 10),
+
             Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18.0),
               child: Row(
@@ -45,6 +50,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("Please provide us your location"),
                   Icon(Icons.my_location_rounded),
                 ],
+
+            GestureDetector(
+              onTap: () {
+                Get.to(MapLoc(
+                  pickUp: 1,
+                ));
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Obx(
+                      () => Flexible(
+                        child: RichText(
+                          overflow: TextOverflow.ellipsis,
+                          strutStyle: StrutStyle(fontSize: 12.0),
+                          text: TextSpan(
+                              style: TextStyle(fontSize: 18, color: fontOffC),
+                              text: locate.value.pickUp),
+                        ),
+                      ),
+                    ),
+                   const Icon(Icons.my_location_rounded),
+                  ],
+                ),
+
               ),
             ),
 
@@ -54,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
 
+
             Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18.0),
               child: Row(
@@ -62,6 +95,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("select your destination"),
                   Icon(Icons.my_location_rounded),
                 ],
+
+            GestureDetector(
+              onTap: () {
+                Get.to(MapLoc(
+                  pickUp: 2,
+                ));
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Obx(
+                      () => Flexible(
+                        child: RichText(
+                          overflow: TextOverflow.ellipsis,
+                          strutStyle: StrutStyle(fontSize: 12.0),
+                          text: TextSpan(
+                              style: TextStyle(fontSize: 18, color: fontOffC),
+                              text: locate.value.pickUpFrom),
+                        ),
+                      ),
+                    ),
+                    Icon(Icons.my_location_rounded),
+                  ],
+                ),
+
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height / 2.5),
@@ -128,7 +188,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
+
                       color: Colors.green),
+
+
                   child: const Padding(
                     padding: EdgeInsets.all(10.5),
                     child: Text(
