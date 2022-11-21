@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-
-
+import 'package:get/get.dart';
+import 'package:cab_booking_user/cabDetails.dart';
 class CabBook extends StatefulWidget {
   const CabBook({Key? key, required this.dateTime}) : super(key: key);
   final String dateTime;
@@ -74,9 +74,9 @@ class _CabBookState extends State<CabBook> {
           ),
           GestureDetector(
             onTap: () {
-              // Get.to(CabConfirm(
-              //   car: "Mini",
-              // ));
+              Get.to(DetailsPage(
+                carType: "Mini",
+              ));
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18),
@@ -123,10 +123,9 @@ class _CabBookState extends State<CabBook> {
           ),
           GestureDetector(
             onTap: () {
-              // Get.to(CabConfirm(
-              //   car: "Sedan",
-              //
-              // ));
+              Get.to(DetailsPage(
+                carType: "Sedan",
+              ));
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18),
@@ -173,10 +172,10 @@ class _CabBookState extends State<CabBook> {
           ),
           GestureDetector(
             onTap: ()  {
-              // Get.to(CabConfirm(
-              //   car: "SUV",
-              //
-              // ));
+              Get.to(DetailsPage(
+                carType: "SUV",
+
+              ));
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 18.0, right: 18),
