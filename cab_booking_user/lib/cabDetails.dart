@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DetailsPage extends StatelessWidget {
   DetailsPage({required this.carType,});
@@ -16,41 +17,27 @@ final String carType;
             backgroundColor: Colors.green,
           ),
           body: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(18.0),
             child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  myData(Data: 'Booking Details',vals: 5),
-                  // Container(
-                  //    child: TextField(
-                  //
-                  //    ),
-                  //   padding: EdgeInsets.all(1),
-                  //  ),
+                  myData(Data: 'Booking Details'),
+
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0,right: 8.0),
-                    child: Divider(thickness: 1,),
+                    padding: EdgeInsets.only(
+                        left: Get.width / 6, right: Get.width / 6),
+                    child: Divider(
+                      thickness: 2,
+                    ),
                   ),
-                  Container(
-                    height: 40.0,
-                    color: Colors.white,
-                    child:const Text('Ride Type -'),
-                  ),
-
-
+                  details(deta: 'Ride Type',detb:'Dropping' ),
                   Container(
                     height: 40.0,
                     color: Colors.white,
                     child: Text('Car Type -'),
                   ),
 
-                  /*Container(
-                    child: TextField(
-
-                    ),
-                    padding: EdgeInsets.all(0.1),
-                  ),*/
                   Container(
                     height: 40.0,
                     color: Colors.white,
@@ -80,13 +67,17 @@ final String carType;
                     color: Colors.white,
                     child: Text('Total fare -'),
                   ),
-                  myData(Data:"Passenger Details",),
-
-                  Container(
-                      height: 30.0,
-                      color: Colors.white,
-                      child: Text('Name : ')
+                  myData(
+                    Data: "Passenger Details",
                   ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: Get.width / 6, right: Get.width / 6),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+
                   /*margin:EdgeInsets.all(10) ,
                           child:Column(
                             children: <Widget>[
@@ -108,14 +99,12 @@ final String carType;
                       // code when the user saves the form.
                     },
                     validator: (String? value) {
-                      return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
+                      return (value != null && value.contains('@'))
+                          ? 'Do not use the @ char.'
+                          : null;
                     },
                   ),
-                  Container(
-                      height: 20.0,
-                      color: Colors.white,
-                      child: Text('Email : ')
-                  ),
+
                   TextFormField(
                     decoration: const InputDecoration(
                       icon: Icon(Icons.person),
@@ -127,7 +116,9 @@ final String carType;
                       // code when the user saves the form.
                     },
                     validator: (String? value) {
-                      return (value != null && value.contains('@')) ? 'Do not use the @ char.' : null;
+                      return (value != null && value.contains('@'))
+                          ? 'Do not use the @ char.'
+                          : null;
                     },
                   ),
 
@@ -136,34 +127,62 @@ final String carType;
                     //color: Colors.white,
                     // child: Text('Button '),
                     child: Center(
-                        child:Padding(
+                        child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Card(
-                            elevation :10.0,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: 30,
+                              width: 100,
+                              decoration: ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                  ),
+                                  color: Colors.cyan),
+                              // elevation :30.0,
+                              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60.0)),
 
-                            color:Colors.black,
-                            child:Text('Button'),
-
-
+                              child: Center(child: Text('Button')),
+                            ),
                           ),
-                        )
-                    ),
-
+                        )),
                   ),
 
                   // ],
-
                 ],
               ),
-
-
             ),
-          )
-      ),
+          )),
     );
 
 
+  }
+
+  details({String? deta, String? detb}) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Container(
+            height: 40.0,
+            color: Colors.white,
+            child: const Text('Ride Type'),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: Text("-"),
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
+            height: 40.0,
+            color: Colors.white,
+            child: const Text('Dropping'),
+          ),
+        ),
+      ],
+    );
   }
   myData({String ?Data, int ?vals}){
     print(vals.toString());
