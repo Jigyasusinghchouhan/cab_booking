@@ -41,6 +41,16 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             // const SizedBox(height: 10),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Please provide us your location"),
+                  Icon(Icons.my_location_rounded),
+                ],
+
             GestureDetector(
               onTap: () {
                 Get.to(MapLoc(
@@ -66,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                    const Icon(Icons.my_location_rounded),
                   ],
                 ),
+
               ),
             ),
 
@@ -74,6 +85,17 @@ class _HomeScreenState extends State<HomeScreen> {
               "Destination:",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+
+
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("select your destination"),
+                  Icon(Icons.my_location_rounded),
+                ],
+
             GestureDetector(
               onTap: () {
                 Get.to(MapLoc(
@@ -99,6 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(Icons.my_location_rounded),
                   ],
                 ),
+
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height / 2.5),
@@ -165,7 +188,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.black),
+
+                      color: Colors.green),
+
+
                   child: const Padding(
                     padding: EdgeInsets.all(10.5),
                     child: Text(
