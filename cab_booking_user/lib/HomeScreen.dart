@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String dateB = "0";
+  bool roundSwitch = false;
   bool dateSwitch = false;
   var now = DateTime.now();
 
@@ -34,7 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
 
 
             Expanded(
@@ -119,103 +119,45 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            Text(
-              "From:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            // const SizedBox(height: 10),
-            GestureDetector(
-              onTap: () {
-                Get.to(MapLoc(
-                  pickUp: 1,
-                ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(
-                          () => Flexible(
-                        child: RichText(
-                          overflow: TextOverflow.ellipsis,
-                          strutStyle: StrutStyle(fontSize: 12.0),
-                          text: TextSpan(
-                              style: TextStyle(fontSize: 18, color: fontOffC),
-                              text: locate.value.pickUp),
-                        ),
-                      ),
-                    ),
-                    const Icon(Icons.my_location_rounded),
-                  ],
-                ),
-              ),
-            ),
 
-            const SizedBox(height: 20),
-            Text(
-              "Destination:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            GestureDetector(
-              onTap: () {
-                Get.to(MapLoc(
-                  pickUp: 2,
-                ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(
-                          () => Flexible(
-                        child: RichText(
-                          overflow: TextOverflow.ellipsis,
-                          strutStyle: StrutStyle(fontSize: 12.0),
-                          text: TextSpan(
-                              style: TextStyle(fontSize: 18, color: fontOffC),
-                              text: locate.value.pickUpFrom),
-                        ),
-                      ),
-                    ),
-                    Icon(Icons.my_location_rounded),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height / 2.5),
-            Text(
-              'Pickup Date:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    DatePicker.showDateTimePicker(context,
-                        showTitleActions: true,
-                        onCancel: () {
-                          setState(() {
-                            dateB = "0";
-                          });
-                        },
-                        minTime: DateTime(now.year, now.month, now.day,
-                            now.hour, now.minute, 00),
-                        onChanged: (date) {},
-                        onConfirm: (date) {
-                          setState(() {
-                            dateB =
-                            "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Pickup Date:',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20,),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          DatePicker.showDateTimePicker(context,
+                              showTitleActions: true,
+                              onCancel: () {
+                                setState(() {
+                                  dateB = "0";
+                                });
+                              },
+                              minTime: DateTime(now.year, now.month, now.day,
+                                  now.hour, now.minute, 00),
+                              onChanged: (date) {},
+                              onConfirm: (date) {
+                                setState(() {
+                                  dateB =
+                                  "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
+
                                   dateSwitch = true;
                                 });
                               },
                               currentTime: DateTime(now.year, now.month, now.day,
                                   now.hour, now.minute, 00));
                         },
-
                         child: dateSwitch == false
                             ? Text(
                           "DD-MM-YYYY | HH:MM",
@@ -263,7 +205,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Select Cab",
                         style: TextStyle(color: Colors.white, fontSize: 30),
                       ),
-
                     ),
                   ),
                 ),
