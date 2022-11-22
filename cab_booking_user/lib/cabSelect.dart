@@ -15,7 +15,7 @@ class _CabBookState extends State<CabBook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.green,
+      backgroundColor:Colors.green.shade50,
       appBar: AppBar(
         title: Text("Select Cab"),
 
