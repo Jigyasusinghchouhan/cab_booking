@@ -16,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String dateB = "0";
-  bool roundSwitch = false;
   bool dateSwitch = false;
   var now = DateTime.now();
 
@@ -29,174 +28,182 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.green,
         elevation: 0,
       ),
+
       body: Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: const EdgeInsets.only(left: 18.0,right: 18,top: 18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
 
-            Text(
-              "From:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            // const SizedBox(height: 10),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Expanded(
+              flex: 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Please provide us your location"),
-                  Icon(Icons.my_location_rounded),
-                ],
-
-            GestureDetector(
-              onTap: () {
-                Get.to(MapLoc(
-                  pickUp: 1,
-                ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(
-                      () => Flexible(
-                        child: RichText(
-                          overflow: TextOverflow.ellipsis,
-                          strutStyle: StrutStyle(fontSize: 12.0),
-                          text: TextSpan(
-                              style: TextStyle(fontSize: 18, color: fontOffC),
-                              text: locate.value.pickUp),
-                        ),
+                  Text(
+                    "From:",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 10,),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(MapLoc(
+                        pickUp: 1,
+                      ));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Obx(
+                                () => Flexible(
+                              child: RichText(
+                                overflow: TextOverflow.ellipsis,
+                                strutStyle: StrutStyle(fontSize: 12.0),
+                                text: TextSpan(
+                                    style: TextStyle(fontSize: 18, color: fontOffC),
+                                    text: locate.value.pickUp),
+                              ),
+                            ),
+                          ),
+                          const Icon(Icons.my_location_rounded),
+                        ],
                       ),
                     ),
-                   const Icon(Icons.my_location_rounded),
-                  ],
-                ),
-
+                  ),
+                ],
               ),
             ),
 
-            const SizedBox(height: 20),
-            Text(
-              "Destination:",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Expanded(
+              flex: 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("select your destination"),
-                  Icon(Icons.my_location_rounded),
-                ],
-
-            GestureDetector(
-              onTap: () {
-                Get.to(MapLoc(
-                  pickUp: 2,
-                ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Obx(
-                      () => Flexible(
-                        child: RichText(
-                          overflow: TextOverflow.ellipsis,
-                          strutStyle: StrutStyle(fontSize: 12.0),
-                          text: TextSpan(
-                              style: TextStyle(fontSize: 18, color: fontOffC),
-                              text: locate.value.pickUpFrom),
-                        ),
+                  Text(
+                    "Destination:",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20,),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(MapLoc(
+                        pickUp: 2,
+                      ));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Obx(
+                                () => Flexible(
+                              child: RichText(
+                                overflow: TextOverflow.ellipsis,
+                                strutStyle: StrutStyle(fontSize: 12.0),
+                                text: TextSpan(
+                                    style: TextStyle(fontSize: 18, color: fontOffC),
+                                    text: locate.value.pickUpFrom),
+                              ),
+                            ),
+                          ),
+                          Icon(Icons.my_location_rounded),
+                        ],
                       ),
                     ),
-                    Icon(Icons.my_location_rounded),
-                  ],
-                ),
-
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 2.5),
-            Text(
-              'Pickup Date:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: GestureDetector(
-                  onTap: () {
-                    DatePicker.showDateTimePicker(context,
-                        showTitleActions: true,
-                        onCancel: () {
-                          setState(() {
-                            dateB = "0";
-                          });
-                        },
-                        minTime: DateTime(now.year, now.month, now.day,
-                            now.hour, now.minute, 00),
-                        onChanged: (date) {},
-                        onConfirm: (date) {
-                          setState(() {
-                            dateB =
-                                "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
 
-                            dateSwitch = true;
-                          });
+
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Pickup Date:',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20,),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          DatePicker.showDateTimePicker(context,
+                              showTitleActions: true,
+                              onCancel: () {
+                                setState(() {
+                                  dateB = "0";
+                                });
+                              },
+                              minTime: DateTime(now.year, now.month, now.day,
+                                  now.hour, now.minute, 00),
+                              onChanged: (date) {},
+                              onConfirm: (date) {
+                                setState(() {
+                                  dateB =
+                                  "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
+
+                                  dateSwitch = true;
+                                });
+                              },
+                              currentTime: DateTime(now.year, now.month, now.day,
+                                  now.hour, now.minute, 00));
                         },
-                        currentTime: DateTime(now.year, now.month, now.day,
-                            now.hour, now.minute, 00));
-                  },
-                  child: dateSwitch == false
-                      ? Text(
+                        child: dateSwitch == false
+                            ? Text(
                           "DD-MM-YYYY | HH:MM",
                           style: TextStyle(fontSize: 18),
                           textAlign: TextAlign.center,
                         )
-                      : Container(
+                            : Container(
                           child: dateB == "0"
                               ? Text(
-                                  "DD-MM-YYYY | HH:MM",
-                                  style: TextStyle(fontSize: 18),
-                                  textAlign: TextAlign.center,
-                                )
+                            "DD-MM-YYYY | HH:MM",
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          )
                               : Text(
-                                  dateB,
-                                  style: TextStyle(fontSize: 20),
-                                ),
+                            dateB,
+                            style: TextStyle(fontSize: 20),
+                          ),
                         ),
-                ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                Get.to(CabBook(
-                  dateTime: '0',
-                ));
-              },
-              child: Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-
-                      color: Colors.green),
-
-
-                  child: const Padding(
-                    padding: EdgeInsets.all(10.5),
-                    child: Text(
-                      "Select Cab",
-                      style: TextStyle(color: Colors.white, fontSize: 25),
+            Expanded(
+                flex: 4,
+                child: SizedBox()),
+            Expanded(
+              flex: 1,
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(CabBook(
+                    dateTime: '0',
+                  ));
+                },
+                child: Center(
+                  child: Container(
+                    height: 60,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black),
+                    child: Center(
+                      child: Text(
+                        "Select Cab",
+                        style: TextStyle(color: Colors.white, fontSize: 30),
+                      ),
                     ),
                   ),
                 ),

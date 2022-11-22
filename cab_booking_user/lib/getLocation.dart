@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_api_headers/google_api_headers.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
+
 class MapLoc extends StatefulWidget {
   const MapLoc({Key? key, required this.pickUp}) : super(key: key);
   final int pickUp;
