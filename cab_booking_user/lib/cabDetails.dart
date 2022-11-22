@@ -45,6 +45,7 @@ final String carType;
                         details(deta: 'Distance', detb: 'Dropping'),
                         details(deta: 'Date/Time', detb: 'Dropping'),
                         details(deta: 'Total fare', detb: 'Dropping'),
+                        details(deta: 'Total fare', detb: 'Dropping'),
                       ],
                     ),
                   ),
