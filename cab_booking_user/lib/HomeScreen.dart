@@ -41,16 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             // const SizedBox(height: 10),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Please provide us your location"),
-                  Icon(Icons.my_location_rounded),
-                ],
-
             GestureDetector(
               onTap: () {
                 Get.to(MapLoc(
@@ -63,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Obx(
-                      () => Flexible(
+                          () => Flexible(
                         child: RichText(
                           overflow: TextOverflow.ellipsis,
                           strutStyle: StrutStyle(fontSize: 12.0),
@@ -73,10 +63,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                   const Icon(Icons.my_location_rounded),
+                    const Icon(Icons.my_location_rounded),
                   ],
                 ),
-
               ),
             ),
 
@@ -85,17 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
               "Destination:",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-
-
-            Padding(
-              padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("select your destination"),
-                  Icon(Icons.my_location_rounded),
-                ],
-
             GestureDetector(
               onTap: () {
                 Get.to(MapLoc(
@@ -108,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Obx(
-                      () => Flexible(
+                          () => Flexible(
                         child: RichText(
                           overflow: TextOverflow.ellipsis,
                           strutStyle: StrutStyle(fontSize: 12.0),
@@ -121,7 +99,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(Icons.my_location_rounded),
                   ],
                 ),
-
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height / 2.5),
@@ -148,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onConfirm: (date) {
                           setState(() {
                             dateB =
-                                "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
+                            "${date.day}-${date.month}-${date.year} | ${date.hour} : ${date.minute}";
 
                             dateSwitch = true;
                           });
@@ -158,22 +135,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: dateSwitch == false
                       ? Text(
-                          "DD-MM-YYYY | HH:MM",
-                          style: TextStyle(fontSize: 18),
-                          textAlign: TextAlign.center,
-                        )
+                    "DD-MM-YYYY | HH:MM",
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.center,
+                  )
                       : Container(
-                          child: dateB == "0"
-                              ? Text(
-                                  "DD-MM-YYYY | HH:MM",
-                                  style: TextStyle(fontSize: 18),
-                                  textAlign: TextAlign.center,
-                                )
-                              : Text(
-                                  dateB,
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                        ),
+                    child: dateB == "0"
+                        ? Text(
+                      "DD-MM-YYYY | HH:MM",
+                      style: TextStyle(fontSize: 18),
+                      textAlign: TextAlign.center,
+                    )
+                        : Text(
+                      dateB,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -188,10 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-
-                      color: Colors.green),
-
-
+                      color: Colors.black),
                   child: const Padding(
                     padding: EdgeInsets.all(10.5),
                     child: Text(
