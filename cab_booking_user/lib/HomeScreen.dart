@@ -1,9 +1,9 @@
 import 'package:cab_booking_user/cabSelect.dart';
-import 'package:cab_booking_user/colorset.dart';
+import 'package:cab_booking_user/ColorSet.dart';
 import 'package:cab_booking_user/getLocation.dart';
 import 'package:cab_booking_user/global.dart';
 import 'package:flutter/material.dart';
-import 'package:cab_booking_user/Methods.dart';
+
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 
@@ -24,9 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cab Book"),
-        centerTitle: true,
         backgroundColor: Colors.green,
+        title:const Text("Cab Book"),
+        centerTitle: true,
         elevation: 0,
       ),
 
@@ -42,14 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const  Text(
                     "From:",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10,),
+                  const  SizedBox(height: 10,),
                   GestureDetector(
                     onTap: () {
-                      Get.to(MapLoc(
+                      Get.to(const MapLoc(
                         pickUp: 1,
                       ));
                     },
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 () => Flexible(
                               child: RichText(
                                 overflow: TextOverflow.ellipsis,
-                                strutStyle: StrutStyle(fontSize: 12.0),
+                                strutStyle:const StrutStyle(fontSize: 12.0),
                                 text: TextSpan(
                                     style: TextStyle(fontSize: 18, color: fontOffC),
                                     text: locate.value.pickUp),
@@ -83,14 +83,14 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     "Destination:",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
-                      Get.to(MapLoc(
+                      Get.to(const MapLoc(
                         pickUp: 2,
                       ));
                     },
@@ -103,14 +103,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 () => Flexible(
                               child: RichText(
                                 overflow: TextOverflow.ellipsis,
-                                strutStyle: StrutStyle(fontSize: 12.0),
+                                strutStyle:const StrutStyle(fontSize: 12.0),
                                 text: TextSpan(
                                     style: TextStyle(fontSize: 18, color: fontOffC),
                                     text: locate.value.pickUpFrom),
                               ),
                             ),
                           ),
-                          Icon(Icons.my_location_rounded),
+                          const Icon(Icons.my_location_rounded),
                         ],
                       ),
                     ),
@@ -124,19 +124,20 @@ class _HomeScreenState extends State<HomeScreen> {
               flex: 2,
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Text(
+                  const Text(
                     'Pickup Date:',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                       child: GestureDetector(
                         onTap: () {
+
                           DatePicker.showDateTimePicker(context,
                               showTitleActions: true,
                               onCancel: () {
@@ -159,21 +160,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                   now.hour, now.minute, 00));
                         },
                         child: dateSwitch == false
-                            ? Text(
+                            ?const Text(
                           "DD-MM-YYYY | HH:MM",
                           style: TextStyle(fontSize: 18),
                           textAlign: TextAlign.center,
                         )
                             : Container(
                           child: dateB == "0"
-                              ? Text(
+                              ?const Text(
                             "DD-MM-YYYY | HH:MM",
                             style: TextStyle(fontSize: 18),
                             textAlign: TextAlign.center,
                           )
                               : Text(
                             dateB,
-                            style: TextStyle(fontSize: 20),
+                            style:const TextStyle(fontSize: 20),
                           ),
                         ),
                       ),
@@ -182,15 +183,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Expanded(
+            const  Expanded(
                 flex: 4,
                 child: SizedBox()),
-            Expanded(
+             Expanded(
               flex: 1,
               child: GestureDetector(
-                onTap: () {
+                onTap: () async{
+                  await totalPolyDistanceCal();
+                  await totalFareCal();
                   Get.to(CabBook(
-                    dateTime: '0',
+                    dateTime: dateB,
                   ));
                 },
                 child: Center(
@@ -200,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.black),
-                    child: Center(
+                    child:const Center(
                       child: Text(
                         "Select Cab",
                         style: TextStyle(color: Colors.white, fontSize: 30),
@@ -214,5 +217,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }  totalFareCal() {
+    setState(() {
+      totalFareMini = totalDistanceRoundOff * 10;
+      totalFareSedan = totalDistanceRoundOff * 18;
+      totalFareSuv = totalDistanceRoundOff * 30;
+    });
   }
 }

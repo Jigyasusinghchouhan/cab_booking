@@ -1,16 +1,24 @@
+import 'package:cab_booking_user/HomeScreen.dart';
+import 'package:cab_booking_user/global.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class DetailsPage extends StatelessWidget {
-  DetailsPage({required this.carType,});
+class BookingDetails extends StatelessWidget {
+  BookingDetails({required this.carType,required this.dateTime,required this.fare});
+
 final String carType;
+  final String dateTime;
+  final String fare;
+
   @override
   Widget build(BuildContext context) {
     var appHeadingTitle;
 
     return Scaffold(
           appBar: AppBar(
-            title: Text('Mini'),
+            title: Text(carType),
             centerTitle: true,
             backgroundColor: Colors.green,
           ),
@@ -39,13 +47,13 @@ final String carType;
                     child: Column(
                       children: [
                         details(deta: 'Ride Type', detb: 'Dropping'),
-                        details(deta: 'Car Type', detb: 'Dropping'),
-                        details(deta: 'From', detb: 'Dropping'),
-                        details(deta: 'To', detb: 'Dropping'),
-                        details(deta: 'Distance', detb: 'Dropping'),
-                        details(deta: 'Date/Time', detb: 'Dropping'),
-                        details(deta: 'Total fare', detb: 'Dropping'),
-                        details(deta: 'Total fare', detb: 'Dropping'),
+                        details(deta: 'Car Type', detb: carType),
+                        details(deta: 'From', detb: locate.value.pickUp),
+                        details(deta: 'To', detb: locate.value.pickUpFrom),
+                        details(deta: 'Distance', detb:" Distance: $totalDistanceRoundOff KM"),
+                        details(deta: 'Date/Time', detb: dateTime),
+                        details(deta: 'Total fare', detb: fare),
+
                       ],
                     ),
                   ),
@@ -127,7 +135,31 @@ final String carType;
                     child: Padding(
                       padding: const EdgeInsets.only(top:18.0),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          FirebaseFirestore.instance
+                              .collection("bookings")
+                              .add({
+                            "Ride Type": "Dropping",
+                            "Car Type": carType,
+                            "From":locate.value.pickUpFrom,
+                            "To":locate.value.pickUp,
+                            "Distance":totalDistanceRoundOff,
+                            "Date/Time":dateTime,
+                            "Total fare":fare,
+                            "timeNow": DateTime.now(),
+                          }).then((value) => {     Fluttertoast.showToast(
+                          msg: "Cab Booking done successfully \nOur Driving executive will contact you soon..",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 5,
+                          backgroundColor: Colors.green,
+                          textColor: Colors.white,
+                          fontSize: 16.0
+                          ),});
+
+                          Get.offAll(HomeScreen());
+
+                        },
                         child: Container(
 
                           decoration: ShapeDecoration(
@@ -138,7 +170,7 @@ final String carType;
                           // elevation :30.0,
                           // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60.0)),
 
-                          child: Center(child: Text('Button',style: TextStyle(color: Colors.white),)),
+                          child: Center(child: Text('Book',style: TextStyle(color: Colors.white),)),
                         ),
                       ),
                     ),
@@ -179,7 +211,7 @@ final String carType;
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          flex: 3,
+          flex: 4,
           child: Container(
             height: 40.0,
             color: Colors.white,
