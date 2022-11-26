@@ -3,7 +3,6 @@ import 'package:cab_booking_user/ColorSet.dart';
 import 'package:cab_booking_user/getLocation.dart';
 import 'package:cab_booking_user/global.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 
