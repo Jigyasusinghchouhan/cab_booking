@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:cab_booking_user/colorset.dart';
+import 'package:cab_booking_user/ColorSet.dart';
 import 'package:cab_booking_user/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places/flutter_google_places.dart';
