@@ -13,7 +13,7 @@ class Authenticate extends StatelessWidget {
       return otpauth();
     }
     else{
-      return HomeScreen();
+      return otpauth();
     }
   }
 }
