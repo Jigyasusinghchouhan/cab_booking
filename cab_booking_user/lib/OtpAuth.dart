@@ -8,6 +8,12 @@ class otpauth extends StatefulWidget {
 }
 
 class _otpauthState extends State<otpauth> {
+  TextEditingController countryController= TextEditingController();
+  @override
+  void initState(){
+    countryController.text="+91";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,11 +51,37 @@ class _otpauthState extends State<otpauth> {
 
               ),
               child: Row(
-
+                 mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 10,
+                    child: TextField(
+                      controller: countryController,
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  Text("|",
+                  style: TextStyle(fontSize: 33, color: Colors.grey),
+                  ),
+                  SizedBox(
+                    width:10,
+                  ),
+                  Expanded(child: TextField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Phone"
+                    ),
+                  )),
+                ],
               ),
             )
           ],
-        )),
+        ),
+        ),
       ),
     );
   }
