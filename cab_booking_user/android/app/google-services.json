@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "420775137564-3j925fr148vlhje1ctke1tsn19616dga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rdx.cab_booking_user",
+            "certificate_hash": "f03238d1f749851668a256cac50c77ad00187571"
+          }
+        },
+        {
           "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -1,3 +1,4 @@
+import 'package:cab_booking_user/Authenticate.dart';
 import 'package:cab_booking_user/cabSelect.dart';
 import 'package:cab_booking_user/ColorSet.dart';
 import 'package:cab_booking_user/getLocation.dart';
@@ -27,6 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title:const Text("Cab Book"),
         centerTitle: true,
         elevation: 0,
+        actions: [
+          GestureDetector(
+              onTap: (){
+                box.remove("uid");
+                Get.offAll( Authenticate());
+              },
+              child: Icon(Icons.logout))
+        ],
       ),
 
       body: Padding(

@@ -1,4 +1,8 @@
+import 'package:firebase_phone_auth_handler/firebase_phone_auth_handler.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'vpns.dart';
 
 class otpauth extends StatefulWidget {
   const otpauth({Key? key}) : super(key: key);
@@ -17,6 +21,7 @@ class _otpauthState extends State<otpauth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
@@ -26,8 +31,6 @@ class _otpauthState extends State<otpauth> {
             children: [
               Image.asset(
                 'assets/mapdemo.jpg',
-                width: 150,
-                height: 150,
               ),
               SizedBox(
                 height: 25,
@@ -60,25 +63,28 @@ class _otpauthState extends State<otpauth> {
                     SizedBox(
                       width: 10,
                     ),
-                    SizedBox(
-                      width: 40,
-                      child: TextField(
-                        controller: countryController,
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      "|",
-                      style: TextStyle(fontSize: 33, color: Colors.grey),
-                    ),
+                    // SizedBox(
+                    //   width: 40,
+                    //   child: TextField(
+                    //     controller: countryController,
+                    //     maxLength: 10,
+                    //     keyboardType: TextInputType.number,
+                    //     decoration: InputDecoration(
+                    //       border: InputBorder.none,
+                    //     ),
+                    //   ),
+                    // ),
+                    // Text(
+                    //   "|",
+                    //   style: TextStyle(fontSize: 33, color: Colors.grey),
+                    // ),
                     SizedBox(
                       width: 10,
                     ),
                     Expanded(
                         child: TextField(
+                          controller: countryController,
+                          maxLength: 13,
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             border: InputBorder.none,
@@ -100,7 +106,10 @@ class _otpauthState extends State<otpauth> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () {
-                      Navigator.pushNamed(context, 'verify');
+
+                      Get.to(VerifyPhoneNumberScreen(
+                        phoneNumber: countryController.text,));
+
                     },
                     child: Text("Send the code")),
               )
