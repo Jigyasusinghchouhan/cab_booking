@@ -48,6 +48,9 @@ dependencies:
   google_maps_webservice: ^0.0.19
   flutter_polyline_points: ^1.0.0
   fluttertoast: ^8.1.1
+  firebase_phone_auth_handler: ^1.0.7
+  get_storage: ^2.0.3
+  pinput: ^2.2.16
 #  geolocator: ^9.0.2
 dev_dependencies:
   flutter_test:
