@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cab_booking_user/CreateAccount.dart';
 import 'package:cab_booking_user/HomeScreen.dart';
 import 'package:cab_booking_user/Methods.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'OtpAuth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -39,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.centerLeft,
                 width: size.width / 1.2,
                 child: IconButton(
-                    onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.arrow_back_ios))),
+                    onPressed: () {Get.back();}, icon: Icon(Icons.arrow_back_ios))),
             SizedBox(
               height: size.height / 50,
             ),
@@ -100,6 +104,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(otpauth());
+                },
+                child: Text(
+                  "Login with otp",
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
