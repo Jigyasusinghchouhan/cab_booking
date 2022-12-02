@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(primarySwatch: Colors.blue,
         ),
-        home:box.read("uid").toString()=="null"?Authenticate():HomeScreen(),
+        home:Authenticate(),
       ),
     );
   }
