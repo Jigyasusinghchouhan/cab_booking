@@ -2,13 +2,17 @@
 MCA SEM 1 MINI PROJECT
 # cab_booking
 MCA SEM 1 MINI PROJECT
-# Submitted By                     #Submitted To                                                                   
-JIGYASU SINGH CHOUHAN				PROF.AKSHIT MITHAIWALA
+# Submitted By                                                                                  
+JIGYASU SINGH CHOUHAN				
 NEHA MORE
 GAURAV GABA
 MEETA NAHAR			
 CHINMAYA GARNAIK
 
+  #Submitted To      
+  PROF.AKSHIT MITHAIWALA
+  
+  
 # Introduction:
 Cab booking app is a mobile application that allows customers and taxi drivers to book rides. This software uses a gps technology to link customers and taxi Drivers, allowing passengers to book a cab using their Smartphone.  The app displays nearby taxis to his Location to passengers. The primary goal of this project Is to make taxi services more feasible than they were Previously. All you need is a smartphone and access to The internet. If you are a passenger, you may request a Taxi with only one click on the button. If you’re a Driver, you may accept or deny requests with Another click. This work will not be controlled by a Third party. Customers may easily book a car online, And cab booking agencies can track their bookings Online as well. Customers may see available cabs, View profiles, and book cabs using this app. The Majority of individuals rely on cab services for their Everyday transportation requirements. We can also Check which cars are available for booking
 
