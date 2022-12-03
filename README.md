@@ -1,5 +1,4 @@
-# cab_booking
-MCA SEM 1 MINI PROJECT
+
 # cab_booking
 MCA SEM 1 MINI PROJECT
 # Submitted By                                                                                  
