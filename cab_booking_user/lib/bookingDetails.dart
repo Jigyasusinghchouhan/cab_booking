@@ -140,13 +140,14 @@ class BookingDetails extends StatelessWidget {
                           FirebaseFirestore.instance
                               .collection("bookings")
                               .add({
-                            "Ride Type": "Dropping",
-                            "Car Type": carType,
+                            "RideType": "Dropping",
+                            // "phone":,
+                            "CarType": carType,
                             "From":locate.value.pickUpFrom,
                             "To":locate.value.pickUp,
                             "Distance":totalDistanceRoundOff,
-                            "Date/Time":dateTime,
-                            "Total fare":fare,
+                            "userDate":dateTime,
+                            "TotalFare":fare,
                             "timeNow": DateTime.now(),
                           }).then((value) => {     Fluttertoast.showToast(
                           msg: "Cab Booking done successfully \nOur Driving executive will contact you soon..",

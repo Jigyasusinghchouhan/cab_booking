@@ -68,27 +68,26 @@ class _HomePageState extends State<HomePage> {
     // getGroupsData();
   }
 
-  getGroupsData() {
-    setState(() {
-      isFetching = true;
-    });
-
-    FirebaseFirestore.instance.collection("drivers").get().then(
-          (QuerySnapshot snapshot) {
-        snapshot.docs.forEach((f) {
-          dataList.add(f["name"]);
-        });
-      },
-    );
-
-    setState(() {
-      isFetching = false;
-    });
-  }
+  // getGroupsData() {
+  //   setState(() {
+  //     isFetching = true;
+  //   });
+  //
+  //   FirebaseFirestore.instance.collection("drivers").get().then(
+  //         (QuerySnapshot snapshot) {
+  //       snapshot.docs.forEach((f) {
+  //         dataList.add(f["name"]);
+  //       });
+  //     },
+  //   );
+  //
+  //   setState(() {
+  //     isFetching = false;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    print(box.read("uid"));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -99,7 +98,7 @@ class _HomePageState extends State<HomePage> {
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('bookings')
-            .where("driverUid", isEqualTo: box.read("uid"))
+
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) return Text("There is no expense");
@@ -169,9 +168,9 @@ class _HomePageState extends State<HomePage> {
                             onTap: () {
                               Get.to(RidePage(
                                 name: snapshot.data!.docs[index]["name"],
-                                des: snapshot.data!.docs[index]["to"],
-                                pic: snapshot.data!.docs[index]["from"],
-                                date: snapshot.data!.docs[index]["time"]
+                                des: snapshot.data!.docs[index]["To"],
+                                pic: snapshot.data!.docs[index]["From"],
+                                date: snapshot.data!.docs[index]["userDate"]
                                     .toDate(),
                                 num: snapshot.data!.docs[index]["phone"],
                                 pickUpLoc: GeoPoint(
