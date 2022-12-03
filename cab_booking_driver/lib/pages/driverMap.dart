@@ -17,7 +17,7 @@ class DriveMap extends StatelessWidget {
         Key? key})
       : super(key: key);
 
-  final DateTime date;
+  final String date;
   final GeoPoint fromLoc;
   final GeoPoint toLoc;
   final String uid;

@@ -1,3 +1,4 @@
+import 'package:cab_booking_user/global.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cab_booking_user/HomeScreen.dart';
 import 'package:cab_booking_user/LoginScreen.dart';
@@ -9,11 +10,12 @@ class Authenticate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(_auth.currentUser != null) {
-      return otpauth();
+    if(_auth.currentUser != null && box.read("uid").toString()!="null") {
+      return HomeScreen();
     }
     else{
-      return otpauth();
+      return LoginScreen();
     }
+
   }
 }

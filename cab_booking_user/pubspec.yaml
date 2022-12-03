@@ -50,7 +50,10 @@ dependencies:
   geocoding: ^2.0.5
   flutter_polyline_points: ^1.0.0
   fluttertoast: ^8.1.1
+  get_storage: ^2.0.3
+  firebase_phone_auth_handler: ^1.0.7
   lottie: ^2.0.0
+  pinput: ^2.2.16
 
 dev_dependencies:
   flutter_test:

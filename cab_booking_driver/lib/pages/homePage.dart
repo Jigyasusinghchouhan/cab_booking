@@ -167,11 +167,11 @@ class _HomePageState extends State<HomePage> {
                           child: GestureDetector(
                             onTap: () {
                               Get.to(RidePage(
-                                name: snapshot.data!.docs[index]["name"],
+                                // name: snapshot.data!.docs[index]["name"],
+                                name: "User",
                                 des: snapshot.data!.docs[index]["To"],
                                 pic: snapshot.data!.docs[index]["From"],
-                                date: snapshot.data!.docs[index]["userDate"]
-                                    .toDate(),
+                                date: snapshot.data!.docs[index]["userDate"],
                                 num: snapshot.data!.docs[index]["phone"],
                                 pickUpLoc: GeoPoint(
                                   snapshot.data!.docs[index]["fromLoc"]
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                                       .longitude,
                                 ),
                                 totalPrice: snapshot.data!.docs[index]
-                                ["totalFare"],
+                                ["TotalFare"],
                                 uid: snapshot.data!.docs[index].id,
                               ));
                             },
@@ -205,8 +205,7 @@ class _HomePageState extends State<HomePage> {
                                   CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      " Date:${DateFormat.yMMMd().add_jm().format(snapshot.data!.docs[index]["time"].toDate()).toString()}"
-                                      // snapshot.data!.docs[index]["time"].toString()
+                                  "   Date:${snapshot.data!.docs[index]["userDate"]} "
                                       ,
                                       style: TextStyle(color: fontOnC),
                                     ),
@@ -217,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                                       text: TextSpan(
                                         style: TextStyle(color: fontOffC),
                                         text:
-                                        "Pickup Point: ${snapshot.data!.docs[index]["from"]}",
+                                        "Pickup Point: ${snapshot.data!.docs[index]["From"]}",
                                       ),
                                       textAlign: TextAlign.center,
                                     ),
@@ -291,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                                   CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      " Date:${DateFormat.yMMMd().add_jm().format(snapshot.data!.docs[index]["time"].toDate()).toString()}"
+                                      snapshot.data!.docs[index]["userDate"]
                                       // snapshot.data!.docs[index]["time"].toString()
                                       ,
                                       style: TextStyle(color: fontOnC),
@@ -303,7 +302,7 @@ class _HomePageState extends State<HomePage> {
                                       text: TextSpan(
                                         style: TextStyle(color: fontOffC),
                                         text:
-                                        "Pickup Point: ${snapshot.data!.docs[index]["from"]}",
+                                        "Pickup Point: ${snapshot.data!.docs[index]["From"]}",
                                       ),
                                       textAlign: TextAlign.center,
                                     ),

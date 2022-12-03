@@ -21,7 +21,7 @@ class RidePage extends StatelessWidget {
         Key? key})
       : super(key: key);
   final String name;
-  final DateTime date;
+  final String date;
   final String num;
   final String pic;
   final String des;
@@ -93,12 +93,7 @@ class RidePage extends StatelessWidget {
           SizedBox(height: 50),
           tableBox(label: "Name:", val: name),
           tableBox(label: "Date/Time:", val:
-          DateFormat.yMMMd()
-              .add_jm()
-              .format(date
-          )
-              .toString()
-          ),
+          date),
           tableBox(label: "Pickup Point:", val: pic),
           tableBox(label: "Destination:", val: des),
           tableBox(label: "Number:", val: num),

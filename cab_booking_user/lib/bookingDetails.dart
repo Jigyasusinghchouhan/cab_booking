@@ -141,10 +141,15 @@ class BookingDetails extends StatelessWidget {
                               .collection("bookings")
                               .add({
                             "RideType": "Dropping",
-                            // "phone":,
+                            "status":"pending",
+                            "phone":box.read("phone"),
                             "CarType": carType,
                             "From":locate.value.pickUpFrom,
                             "To":locate.value.pickUp,
+                            "fromLoc": GeoPoint(
+                                calLocation.value.pickUpFromLat, calLocation.value.pickUpFromLag),
+                            "toLoc": GeoPoint(
+                                calLocation.value.pickUpLat,calLocation.value.pickUpLag),
                             "Distance":totalDistanceRoundOff,
                             "userDate":dateTime,
                             "TotalFare":fare,

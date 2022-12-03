@@ -1,7 +1,9 @@
-import 'package:cab_booking_driver/components/colorset.dart';
-import 'package:cab_booking_driver/components/gobal.dart';
-import 'package:cab_booking_driver/pages/faq.dart';
-import 'package:cab_booking_driver/pages/profile.dart';
+
+import 'package:cab_booking_user/Authenticate.dart';
+import 'package:cab_booking_user/ColorSet.dart';
+import 'package:cab_booking_user/faq.dart';
+import 'package:cab_booking_user/global.dart';
+import 'package:cab_booking_user/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,24 +17,24 @@ class AppDrawer extends StatelessWidget {
           _createHeader(),
           Expanded(
               child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              // _createDrawerItem(
-              //   icon: Icons.history,
-              //   text: 'Ride History',
-              // ),
-              _createDrawerItem(
-                  icon: Icons.question_answer_outlined,
-                  text: 'FAQ',
-                  onTap: (){
-                    Get.to(FAQ());
-                  }
-              ),
-              // _createDrawerItem(
-              //     icon: Icons.settings_applications, text: 'Setting'),
-              _createDrawerItem(text: 'V0.0.1', fontS: 17),
-            ],
-          )),
+                padding: EdgeInsets.zero,
+                children: <Widget>[
+                  // _createDrawerItem(
+                  //   icon: Icons.history,
+                  //   text: 'Ride History',
+                  // ),
+                  _createDrawerItem(
+                      icon: Icons.question_answer_outlined,
+                      text: 'FAQ',
+                      onTap: (){
+                        Get.to(FAQ());
+                      }
+                  ),
+                  // _createDrawerItem(
+                  //     icon: Icons.settings_applications, text: 'Setting'),
+                  _createDrawerItem(text: 'V0.0.1', fontS: 17),
+                ],
+              )),
           Container(
             color: Colors.black,
             width: double.infinity,
@@ -49,7 +51,7 @@ class AppDrawer extends StatelessWidget {
               ),
               onTap: () {
                 box.remove('uid');
-                // Get.offAll(FrontPage());
+                Get.offAll( Authenticate());
               },
             ),
           ),
@@ -111,9 +113,9 @@ class AppDrawer extends StatelessWidget {
 
   Widget _createDrawerItem(
       {IconData? icon,
-      required String text,
-      GestureTapCallback? onTap,
-      double? fontS}) {
+        required String text,
+        GestureTapCallback? onTap,
+        double? fontS}) {
     return ListTile(
       title: Row(
         children: <Widget>[

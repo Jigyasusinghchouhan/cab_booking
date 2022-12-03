@@ -1,7 +1,5 @@
-import 'package:cab_booking_driver/components/colorset.dart';
-import 'package:cab_booking_driver/components/gobal.dart';
-import 'package:cab_booking_driver/pages/faq.dart';
-import 'package:cab_booking_driver/widgets/appbar.dart';
+import 'package:cab_booking_user/faq.dart';
+import 'package:cab_booking_user/global.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,11 +9,9 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: aBar(
-          ico: Icons.arrow_back_ios_new_rounded,
-          icoColor: fontOnC,
-          tIcoPre: true,
-          title: "Profile"
+      appBar: AppBar(
+          title: Text("Profile"),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +40,7 @@ class Profile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "box.read(name)",
+                  box.read("name"),
                   style: TextStyle(fontSize: 25),
                 ),
               ],
