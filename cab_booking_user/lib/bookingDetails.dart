@@ -1,4 +1,5 @@
 import 'package:cab_booking_user/HomeScreen.dart';
+import 'package:cab_booking_user/cancel.dart';
 import 'package:cab_booking_user/global.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class BookingDetails extends StatelessWidget {
   BookingDetails({required this.carType,required this.dateTime,required this.fare});
 
-final String carType;
+  final String carType;
   final String dateTime;
   final String fare;
 
@@ -157,7 +158,7 @@ final String carType;
                           fontSize: 16.0
                           ),});
 
-                          Get.offAll(HomeScreen());
+                          Get.offAll(Cancel());
 
                         },
                         child: Container(

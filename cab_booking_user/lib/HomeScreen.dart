@@ -1,3 +1,4 @@
+import 'package:cab_booking_user/GeoPlace.dart';
 import 'package:cab_booking_user/cabSelect.dart';
 import 'package:cab_booking_user/ColorSet.dart';
 import 'package:cab_booking_user/getLocation.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,18 +29,18 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.green,
         title:const Text("Cab Book"),
         centerTitle: true,
-        elevation: 0,
+
       ),
 
       body: Padding(
         padding: const EdgeInsets.only(left: 18.0,right: 18,top: 18),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
 
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     "From:",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  const  SizedBox(height: 10,),
+                  // const  SizedBox(height: 10,),
                   GestureDetector(
                     onTap: () {
                       Get.to(const MapLoc(
@@ -58,18 +60,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Obx(
-                                () => Flexible(
-                              child: RichText(
-                                overflow: TextOverflow.ellipsis,
-                                strutStyle:const StrutStyle(fontSize: 12.0),
-                                text: TextSpan(
-                                    style: TextStyle(fontSize: 18, color: fontOffC),
-                                    text: locate.value.pickUp),
+                          Obx(() => Flexible(
+                            child: RichText(
+                                    overflow: TextOverflow.ellipsis,
+                                    strutStyle:const StrutStyle(fontSize: 12.0),
+                                    text: TextSpan(
+                                        style: TextStyle(fontSize: 18, color: fontOffC),
+                                        text: locate.value.pickUp),
+                                  ),
+                          ),
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              Get.to(MapLoc(pickUp: 1,));
+                            },
+                            child: Card(
+                              elevation: 5,
+                              color: Colors.white,
+
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Icon(
+                                  Icons.my_location,
+                                  color: fontOnC,
+                                ),
                               ),
                             ),
                           ),
-                          const Icon(Icons.my_location_rounded),
                         ],
                       ),
                     ),
@@ -79,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -87,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     "Destination:",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 20,),
+                  // const SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
                       Get.to(const MapLoc(
@@ -101,16 +118,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Obx(
                                 () => Flexible(
-                              child: RichText(
-                                overflow: TextOverflow.ellipsis,
-                                strutStyle:const StrutStyle(fontSize: 12.0),
-                                text: TextSpan(
-                                    style: TextStyle(fontSize: 18, color: fontOffC),
-                                    text: locate.value.pickUpFrom),
+                                  child: RichText(
+                                    overflow: TextOverflow.ellipsis,
+                                    strutStyle:const StrutStyle(fontSize: 12.0),
+                                    text: TextSpan(
+                                        style: TextStyle(fontSize: 18, color: fontOffC),
+                                        text: locate.value.pickUpFrom),
+                                  ),
+                                ),
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              Get.to(MapLoc(pickUp: 2,));
+                            },
+                            child: Card(
+                              elevation: 5,
+                              color: Colors.white,
+
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Icon(
+                                  Icons.my_location,
+                                  color: fontOnC,
+                                ),
                               ),
                             ),
                           ),
-                          const Icon(Icons.my_location_rounded),
                         ],
                       ),
                     ),
@@ -183,11 +216,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            const  Expanded(
-                flex: 4,
-                child: SizedBox()),
+              Expanded(
+                flex: 6,
+                child:Lottie.asset('assets/area-map.json'),),
+
              Expanded(
-              flex: 1,
+              flex: 2,
               child: GestureDetector(
                 onTap: () async{
                   await totalPolyDistanceCal();
@@ -217,7 +251,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-  }  totalFareCal() {
+  }
+  totalFareCal() {
     setState(() {
       totalFareMini = totalDistanceRoundOff * 10;
       totalFareSedan = totalDistanceRoundOff * 18;
