@@ -1,8 +1,7 @@
-import 'package:cargo_driver/Profile/ProfilePage.dart';
-import 'package:cargo_driver/faq.dart';
-import 'package:cargo_driver/frontpage.dart';
-import 'package:cargo_driver/widgets/colorset.dart';
-import 'package:cargo_driver/widgets/global.dart';
+import 'package:cab_booking_driver/components/colorset.dart';
+import 'package:cab_booking_driver/components/gobal.dart';
+import 'package:cab_booking_driver/pages/faq.dart';
+import 'package:cab_booking_driver/pages/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -50,7 +49,7 @@ class AppDrawer extends StatelessWidget {
               ),
               onTap: () {
                 box.remove('uid');
-                Get.offAll(FrontPage());
+                // Get.offAll(FrontPage());
               },
             ),
           ),

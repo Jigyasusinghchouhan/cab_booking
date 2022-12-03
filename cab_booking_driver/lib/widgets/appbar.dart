@@ -1,4 +1,4 @@
-import 'package:cargo_driver/widgets/colorset.dart';
+import 'package:cab_booking_driver/components/colorset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
