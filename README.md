@@ -2,13 +2,13 @@
 # cab_booking
 MCA SEM 1 MINI PROJECT
 # Submitted By                                                                                  
-JIGYASU SINGH CHOUHAN				
-NEHA MORE
-GAURAV GABA
-MEETA NAHAR			
+JIGYASU SINGH CHOUHAN,			
+NEHA MORE,
+GAURAV GABA,
+MEETA NAHAR,		
 CHINMAYA GARNAIK
 
-  #Submitted To      
+  # Submitted To      
   PROF.AKSHIT MITHAIWALA
   
   
