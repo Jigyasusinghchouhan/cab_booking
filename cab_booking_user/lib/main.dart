@@ -22,7 +22,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Authenticate(),
+
+
+        home:Authenticate(),
+
       ),
     );
   }

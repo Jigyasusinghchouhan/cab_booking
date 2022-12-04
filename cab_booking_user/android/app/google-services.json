@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "420775137564-4kbg09hpc3ehjuv68p0psdlfs05cjr95.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rdx.cab_booking_user",
+            "certificate_hash": "d1fbf7e4ad7152af1a71e7e8baeb5ff310062b6c"
+          }
+        },
+        {
           "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
           "client_type": 3
         }
