@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "420775137564",
+    "project_id": "cabbooking-1ff3e",
+    "storage_bucket": "cabbooking-1ff3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420775137564:android:4644886f04cffec8fb6ad9",
+        "android_client_info": {
+          "package_name": "com.rdx.cab_booking_driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd5DyrkVehlUFH19BhEzGCzWPksJHDr30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420775137564:android:44e4d18837a9946dfb6ad9",
+        "android_client_info": {
+          "package_name": "com.rdx.cab_booking_user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420775137564-3j925fr148vlhje1ctke1tsn19616dga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rdx.cab_booking_user",
+            "certificate_hash": "f03238d1f749851668a256cac50c77ad00187571"
+          }
+        },
+        {
+          "client_id": "420775137564-4kbg09hpc3ehjuv68p0psdlfs05cjr95.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rdx.cab_booking_user",
+            "certificate_hash": "d1fbf7e4ad7152af1a71e7e8baeb5ff310062b6c"
+          }
+        },
+        {
+          "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd5DyrkVehlUFH19BhEzGCzWPksJHDr30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420775137564-16l0811rqnra6d5gp2vlvuv8simct4cg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-void main() {
+import 'pages/homePage.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -9,12 +15,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Lottie.asset('lot/car.json'),
-        ),
-      ),
+    return GetMaterialApp(
+      home: HomePage(),
+
+      // Scaffold(
+      //   body: Center(
+      //     child: Lottie.asset('lot/car.json'),
+      //   ),
+      // ),
       debugShowCheckedModeBanner: false,
     );
   }
