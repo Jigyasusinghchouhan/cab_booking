@@ -67,6 +67,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
   }
 
   getData()async{
+    box.write("phone", widget.phoneNumber);
     Get.offAll(const HomeScreen());
     var docSnapshot =
     await FirebaseFirestore.instance.collection("users").doc(box.read("uid")).get();
@@ -116,7 +117,7 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
 
           });
           log(
-           'Login Success UID: ${userCredential.user?.uid}',
+            'Login Success UID: ${userCredential.user?.uid}',
           );
 
         },
@@ -132,26 +133,26 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
             case 'invalid-phone-number':
             // invalid phone number
               return
-              ScaffoldMessenger.of(context).showSnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Invalid phone number!'),
-                    ),
-                  );
+                  ),
+                );
             case 'invalid-verification-code':
             // invalid otp entered
               return
-              ScaffoldMessenger.of(context).showSnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('The entered OTP is invalid!'),
-                    ),
-                  );
+                  ),
+                );
           // handle other error codes
             default:
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Something went wrong!'),
-                    ),
-                  );
+                const SnackBar(
+                  content: Text('Something went wrong!'),
+                ),
+              );
           // handle error further if needed
           }
         },
@@ -171,12 +172,12 @@ class _VerifyPhoneNumberScreenState extends State<VerifyPhoneNumberScreen>
         builder: (context, controller) {
           return Scaffold(
 
-          //   appBar: aBar(
-          //   ico: Icons.arrow_back_ios_new_rounded,
-          //   icoColor: fontOnC,
-          //   tIcoPre: true,
-          //     title: 'Verify',
-          // ),
+            //   appBar: aBar(
+            //   ico: Icons.arrow_back_ios_new_rounded,
+            //   icoColor: fontOnC,
+            //   tIcoPre: true,
+            //     title: 'Verify',
+            // ),
 
             body: controller.isSendingCode
                 ? Column(

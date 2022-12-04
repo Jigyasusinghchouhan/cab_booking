@@ -1,4 +1,5 @@
 import 'package:cab_booking_user/HomeScreen.dart';
+import 'package:cab_booking_user/cancel.dart';
 import 'package:cab_booking_user/global.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class BookingDetails extends StatelessWidget {
   BookingDetails({required this.carType,required this.dateTime,required this.fare});
 
-final String carType;
+  final String carType;
   final String dateTime;
   final String fare;
 
@@ -139,13 +140,19 @@ final String carType;
                           FirebaseFirestore.instance
                               .collection("bookings")
                               .add({
-                            "Ride Type": "Dropping",
-                            "Car Type": carType,
+                            "RideType": "Dropping",
+                            "status":"pending",
+                            "phone":box.read("phone"),
+                            "CarType": carType,
                             "From":locate.value.pickUpFrom,
                             "To":locate.value.pickUp,
+                            "fromLoc": GeoPoint(
+                                calLocation.value.pickUpFromLat, calLocation.value.pickUpFromLag),
+                            "toLoc": GeoPoint(
+                                calLocation.value.pickUpLat,calLocation.value.pickUpLag),
                             "Distance":totalDistanceRoundOff,
-                            "Date/Time":dateTime,
-                            "Total fare":fare,
+                            "userDate":dateTime,
+                            "TotalFare":fare,
                             "timeNow": DateTime.now(),
                           }).then((value) => {     Fluttertoast.showToast(
                           msg: "Cab Booking done successfully \nOur Driving executive will contact you soon..",
@@ -157,7 +164,7 @@ final String carType;
                           fontSize: 16.0
                           ),});
 
-                          Get.offAll(HomeScreen());
+                          Get.offAll(Cancel());
 
                         },
                         child: Container(
