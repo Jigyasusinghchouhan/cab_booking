@@ -137,6 +137,7 @@ class BookingDetails extends StatelessWidget {
                       padding: const EdgeInsets.only(top:18.0),
                       child: GestureDetector(
                         onTap: () {
+
                           FirebaseFirestore.instance
                               .collection("bookings")
                               .add({
