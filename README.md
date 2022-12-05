@@ -48,52 +48,52 @@ Dart is an open-source general-purpose programming language developed by Google.
 ## USER
 
 # Login Page
-![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png | width=100)
+![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png)
 
 # OTP Login
-![otp login](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Login.png | width=100)
+![otp login](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Login.png)
 
 # OTP Page
-![otp page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Page.png | width=100)
+![otp page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Page.png)
 
 # Home Page
-![home page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/HomePage.png | width=100)
+![home page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/HomePage.png)
 
 # Get Search Current_Location
-![search current location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Search_current%20Loaction.png | width=100)
+![search current location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Search_current%20Loaction.png)
 
 # Cab Booking
-![cab book](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Select%20Cab.png | width=100)
+![cab book](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Select%20Cab.png)
 
 #Booking Details
-![booking details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Booking%20Details.png | width=100)
+![booking details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Booking%20Details.png)
 
 # Cancel Page
-![cancle page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/cab%20confirm_cancle.png | width=100)
+![cancle page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/cab%20confirm_cancle.png)
 
 # LoginPage
-![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png | width=100)
+![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png )
 
 
 ## DRIVER
 
 # Pending Ride
-![pendong ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Pending.png | width=100)
+![pendong ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Pending.png)
 
 # Completed Ride
-![completed ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Completed.png | width=100)
+![completed ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Completed.png)
 
 # Customer Details
-![customer details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Details.png | width=100)
+![customer details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Details.png)
 
 # Customer Location
-![customer location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location.png | width=100)
+![customer location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location.png)
 
 # Customer Location Map
-![customer location Map](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location%20Map.png | width=100)
+![customer location Map](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location%20Map.png)
 
 # Customer Destination
-![customer destination](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Destination.png | width=100)
+![customer destination](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Destination.png)
 
 
 
