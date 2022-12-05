@@ -44,20 +44,59 @@ Dart is an open-source general-purpose programming language developed by Google.
 •	 Front end : flutter
 •	 Back end : Firebase
 •	 RAM : 4 GB 
-# SELECT CAB PAGE
-![select cab](https://user-images.githubusercontent.com/52603806/205443811-40d407b9-c4f6-4e63-82df-38cf6cdb71f0.jpg)
-# booking details PAGE
-![booking details](https://user-images.githubusercontent.com/52603806/205443812-d8360ffa-2af1-4a87-a743-2a4b23e9dd58.jpg)
-#  CAB BOOK PAGE
-![cab book](https://user-images.githubusercontent.com/52603806/205443814-bba2d1c4-af43-4c5c-812a-6afc0afaa63d.jpg)
-# create ACCOUNT PAGE
-![create](https://user-images.githubusercontent.com/52603806/205443816-18ad4a50-8826-438b-bf93-ed3ae548143a.jpg)
-# location PAGE
-![location](https://user-images.githubusercontent.com/52603806/205443818-b3e2732e-3b10-4ddd-af07-70a6e7c002d3.jpg)
-# login PAGE
-![login](https://user-images.githubusercontent.com/52603806/205443819-09b671fa-d12e-470a-91a7-32d83db1eea2.jpg)
-# otp PAGE
-![otp](https://user-images.githubusercontent.com/52603806/205443820-303c57d0-8fb3-4ebb-880a-d921b8076fbf.jpg)
+
+## USER
+
+# Login Page
+![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png)
+
+# OTP Login
+![otp login](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Login.png)
+
+# OTP Page
+![otp page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Otp%20Page.png)
+
+# Home Page
+![home page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/HomePage.png)
+
+# Get Search Current_Location
+![search current location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Search_current%20Loaction.png)
+
+# Cab Booking
+![cab book](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Select%20Cab.png)
+
+#Booking Details
+![booking details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Booking%20Details.png)
+
+# Cancel Page
+![cancle page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/cab%20confirm_cancle.png)
+
+# LoginPage
+![login page](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/user/Number%20Login.png)
+
+
+## DRIVER
+
+# Pending Ride
+![pendong ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Pending.png)
+
+# Completed Ride
+![completed ride](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Completed.png)
+
+# Customer Details
+![customer details](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Details.png)
+
+# Customer Location
+![customer location](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location.png)
+
+# Customer Location Map
+![customer location Map](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Location%20Map.png)
+
+# Customer Destination
+![customer destination](https://raw.githubusercontent.com/Jigyasusinghchouhan/cab_booking/master/screenshort/driver/Customer%20Destination.png)
+
+
+
 
 # USER VIDEO
 https://user-images.githubusercontent.com/52603806/205443824-bc35f18b-f078-4439-b834-84898637833b.mp4
