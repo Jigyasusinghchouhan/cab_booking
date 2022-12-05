@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-const kGoogleApiKey = "AIzaSyDazGML38r08JtnYY_hb0qnG3JMQYGjIJo";
+const kGoogleApiKey = "API_Key";
 
 final locate = YourLocation().obs;
 final calLocation = CalLocation().obs;
